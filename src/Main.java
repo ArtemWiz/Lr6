@@ -30,9 +30,33 @@ public class Main {
                 result.append(letter);
             }
         } while (input != 0);
-        System.out.println("Результат: " + result.toString());
+        System.out.println("Результат: OK " + result.toString());
+
+        //Nummer4
+        Scanner scanner2 = new Scanner(System.in);
+        int numericStringCount2 = 0;
+
+        System.out.println("Введіть рядки (для завершення введіть 'done'):");
+
+        while (true) {
+            String input2 = scanner2.nextLine();
+
+            if (input2.equalsIgnoreCase("done")) {
+                break;
+            }
+
+            if (isNumeric(input2)) {
+                numericStringCount2++;
+            }
+        }
+
+        System.out.println("Кількість рядків з виключно цифрами: " + numericStringCount2);
+
         scanner.close();
 
-
+    }
+    // Метод, який перевіряє, чи рядок складається з виключно цифр
+    public static boolean isNumeric(String str) {
+        return str.matches("\\d+");
     }
 }
